@@ -4,6 +4,21 @@ function outError(error) {
     document.getElementById('modal_errors-text').innerHTML = error
 }
 
+// Парсинг даты для таймера
+function getTimer(dateTimer) {
+    let seconds = parseInt((dateTimer / 1000) % 60)
+    let minutes = parseInt((dateTimer / (1000 * 60)) % 60)
+    let hours = parseInt((dateTimer / (1000 * 60 * 60)) % 24)
+    let days = parseInt(dateTimer / (1000 * 60 * 60 * 24))
+    hours = (hours < 10) ? "0" + hours : hours
+    minutes = (minutes < 10) ? "0" + minutes : minutes
+    seconds = (seconds < 10) ? "0" + seconds : seconds
+    document.getElementById('days').innerHTML = days
+    document.getElementById('hours').innerHTML = hours
+    document.getElementById('minutes').innerHTML = minutes
+    document.getElementById('seconds').innerHTML = seconds
+}
+
 //  Вспомогательные функции в проверке токена
 
 if (localStorage.token) {

@@ -1,2 +1,3 @@
-# Shop
- Store frontend by template 
+# E-Commerce
+
+# Universal API for e-commerce

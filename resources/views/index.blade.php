@@ -262,19 +262,19 @@
                         <div class="col-lg-12">
                             <div class="row clock-wrap">
                                 <div class="col clockinner1 clockinner">
-                                    <h1 class="days">150</h1>
+                                    <h1 id ="days" class="days"></h1>
                                     <span class="smalltext">Дней</span>
                                 </div>
                                 <div class="col clockinner clockinner1">
-                                    <h1 class="hours">23</h1>
-                                    <span class="smalltext">Чаосв</span>
+                                    <h1 id ="hours" class="hours"></h1>
+                                    <span class="smalltext">Часов</span>
                                 </div>
                                 <div class="col clockinner clockinner1">
-                                    <h1 class="minutes">47</h1>
+                                    <h1 id ="minutes" class="minutes"></h1>
                                     <span class="smalltext">Минут</span>
                                 </div>
                                 <div class="col clockinner clockinner1">
-                                    <h1 class="seconds">59</h1>
+                                    <h1 id ="seconds" class="seconds"></h1>
                                     <span class="smalltext">Секунд</span>
                                 </div>
                             </div>
@@ -467,10 +467,12 @@
     <!-- End related-product Area -->
     <script>
         $('document').ready(function(){
-            let dateTimer = '2021-04-21T00:00:00Z';
-            setTimeout(function timer(){
-                let date = new Date(dateTimer) - new Date()
-                setTimeout(timer(),1000)
+            let dateForTimer = '2021-04-21 00:00:00'
+            let dateTimer = new Date(dateForTimer).getTime() - new Date().getTime()
+            let timer = setTimeout(function timer(){
+                getTimer(dateTimer)
+                dateTimer -= 1000
+                timer = setTimeout(timer,1000)
             },1000)
         })
     </script>

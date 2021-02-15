@@ -32,7 +32,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for = "product of cart">
+                        <tr v-for = "product of cart" :id="'productInCart'+product.id">
                             <td>
                                 <div class="media">
                                     <div class="d-flex">

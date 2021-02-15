@@ -55,7 +55,6 @@ new Vue({
             const dataCart = deleteCart(cart_id, this.token, this.token_type)
             dataCart
                 .then(res => {
-                    console.log(res)
                     const dataCart = getCart(this.token, this.token_type)
                     dataCart
                         .then(res => {
@@ -68,6 +67,8 @@ new Vue({
                             this.error = error
                             outError(this.error)
                         })
+                    let totalPay = document.getElementById('totalPay')[0].innerHTML
+                    document.getElementById('totalPay')[0].innerHTML = totalPay - res.price
                 })
                 .catch(error => {
                     this.error = error
