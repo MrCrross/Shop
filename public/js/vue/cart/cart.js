@@ -44,6 +44,7 @@ new Vue({
                         localStorage.removeItem('expires')
                         this.error = error + " REFRESH ME"
                         outError(this.error)
+                        window.location = ''
                     })
             }
         } else {

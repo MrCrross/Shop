@@ -29,6 +29,7 @@ new Vue({
                         localStorage.removeItem('expires')
                         this.error = error + " REFRESH ME"
                         outError(this.error)
+                        window.location = ''
                     })
             }
         }
@@ -139,6 +140,7 @@ new Vue({
                             localStorage.removeItem('expires')
                             this.error = error + " REFRESH ME"
                             outError(this.error)
+                            window.location = ''
                         })
                 }
             } else {
@@ -186,6 +188,7 @@ new Vue({
                             localStorage.removeItem('expires')
                             this.error = error + " REFRESH ME"
                             outError(this.error)
+                            window.location = ''
                         })
                 }
             } else {

@@ -55,6 +55,7 @@ new Vue({
                     .catch(error => {
                         localStorage.removeItem('token')
                         localStorage.removeItem('expires')
+                        window.location = ''
                         this.error = error + " REFRESH ME"
                     })
             }
@@ -104,6 +105,7 @@ new Vue({
                     .catch(error => {
                         localStorage.removeItem('token')
                         localStorage.removeItem('expires')
+                        window.location = ''
                         this.error = error + " LOGOUT REFRESH"
                     })
             }
