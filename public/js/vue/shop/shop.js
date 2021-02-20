@@ -46,13 +46,13 @@ new Vue({
                 for (let i = 1; i <= res.last_page; i++) {
                     this.numPages.push({
                         'id': i,
-                        'link': 'http://127.0.0.1:8000/api/v1/products?page=' + i,
+                        'link': '/api/v1/products?page=' + i,
                         'active': i == res.current_page ? 'active' : ''
                     })
                 }
                 for (let i = 0; i < res.links.length; i++) {
                     if (res.links[i].url === null) {
-                        res.links[i].url = 'http://127.0.0.1:8000/api/v1/products?page=1'
+                        res.links[i].url = '/api/v1/products?page=1'
                     }
                 }
                 this.links = res.links
@@ -87,10 +87,18 @@ new Vue({
             dataProducts
                 .then(res => {
                     this.products = res.data
-                        // Если понадобиться кнопки на прошлую и следующую страницу
+                    this.numPages = []
+                    for (let i = 1; i <= res.last_page; i++) {
+                        this.numPages.push({
+                            'id': i,
+                            'link': '/api/v1/products?page=' + i,
+                            'active': i == res.current_page ? 'active' : ''
+                        })
+                    }
+                    // Если понадобиться кнопки на прошлую и следующую страницу
                     for (let i = 0; i < res.links.length; i++) {
                         if (res.links[i].url === null) {
-                            res.links[i].url = 'http://127.0.0.1:8000/api/v1/products?page=1'
+                            res.links[i].url = '/api/v1/products?page=1'
                         }
                     }
                     this.prev_page = res.links[0]

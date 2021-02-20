@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 offset-lg-1">
+            <div class="col-lg-5 offset-lg-1" :id="product_id">
                 <div class="s_product_text">
                     <h3>@{{product_name}}</h3>
                     <h2>@{{price}}</h2>

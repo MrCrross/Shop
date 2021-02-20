@@ -75,12 +75,11 @@ $(document).ready(function() {
     ==================================*/
     $(".s_Product_carousel").owlCarousel({
         items: 1,
-        autoplay: false,
-        autoplayTimeout: 5000,
-        loop: true,
+        // loop: true,
         nav: false,
         dots: true
     });
+
 
     /*=================================
     Javascript for exclusive area carousel
